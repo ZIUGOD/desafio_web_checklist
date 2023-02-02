@@ -1,0 +1,305 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: lime;
+    font-size: 1rem;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: black;
+}
+
+::selection{ 
+  color: black;
+  background: lime;
+}
+
+.wrapper {
+    min-width: 700px;
+    max-width: 405px;
+    padding: 28px 0 30px;
+    margin: 100px auto;
+    background: black;
+    border-radius: 32px;
+    border: 2px solid #44ff44;
+    box-shadow: 0 0 1rem lime;
+    outline: 1px solid white;
+}
+
+.agora {
+    margin: 3% 0 3% 0;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+    justify-content: space-between;
+    margin: 0 10%;
+    position: relative;
+}
+
+#github-image-link {
+    display: flex;
+    gap: 32px;
+    border: 3px solid limegreen;
+    box-shadow: 0 0 2rem lime;
+    padding: 3%;
+    border-radius: 100%;
+    max-width: 54px;
+    transition: all 0.9s cubic-bezier(0.8, 0.2, 0.2, 3);
+}
+#github-image-link:hover {
+    transform: scale(1.2);
+    background: white;
+    transition: all 0.5s cubic-bezier(0.8, 0.8, 0.8, 1.5);
+}
+
+.task-input input {
+    height: 100%;
+    width: 80%;
+    outline: none;
+    border-radius: 999px;
+    padding: 2% 3%;
+    border: 2px solid #44ff44;
+    box-shadow: 0 0 1rem lime;
+    outline: 1px solid white;
+    background-color: black;
+}
+
+.task-input input:focus,
+.task-input input.active {
+    border: 2px solid lime;
+}
+
+.task-input input::placeholder {
+    color: #44ff44;
+}
+
+.controls, li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.controls {
+    padding: 4% 10% 4% 10%;
+    border: 2px solid #44ff44;
+    border-bottom: 2px solid #44ff44;
+    box-shadow: 0 0 lime;
+    outline: 1px solid white;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+}
+
+.filters span {
+    margin: 0 8px;
+    color: lime;
+    cursor: pointer;
+    border: 1px solid #44ff44;
+    border-radius: 12px;
+    padding: 2% 4%;
+    box-shadow: 0 0 1rem lime;
+    background-color: black;
+    color: lime;
+}
+
+.filters span:first-child {
+    margin-left: 0;
+}
+
+.filters span.active {
+    background-color: lime;
+    color: black;
+}
+
+.controls .clear-btn {
+    border: none;
+    opacity: 0.4;
+    outline: none;
+    color: lime;
+    cursor: pointer;
+    padding: 1.5% 3%;
+    border-radius: 999px;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.8, 0.8, 0.8, 1.5);
+    background: lime;
+    color: black;
+    border: 2px solid #44ff44;
+    box-shadow: 0 0 1rem lime;
+}
+
+.controls .clear-btn:hover {
+    background-color: limegreen;
+}
+
+.clear-btn.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.clear-btn:active {
+    transform: scale(0.80);
+}
+
+.task-box {
+    margin-top: 20px;
+    margin-right: 5px;
+    padding: 0 20px 10px 25px;
+}
+
+.task-box.overflow {
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.task-box::-webkit-scrollbar {
+    width: 5px;
+}
+
+.task-box::-webkit-scrollbar-track {
+    background-color: #00a300;
+    border-radius: 25px;
+}
+
+.task-box::-webkit-scrollbar-thumb {
+    border: 3px solid #44ff44;
+    border-radius: 25px;
+    box-shadow: 0 0 1rem lime;
+}
+
+.task-box .task {
+    list-style: none;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    align-items: flex-start;
+    border-bottom: 1px solid #44ff44;
+}
+.task-box .task:last-child {
+    margin-bottom: 0;
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.task-box .task label {
+    display: flex;
+    align-items: flex-start;
+}
+ 
+.task label input {
+    margin-top: 7px;
+    accent-color: lime;
+}
+
+.task label p {
+    user-select: none;
+    margin-left: 12px;
+    word-wrap: break-word;
+}
+
+.task label p.checked {
+    text-decoration: line-through;
+}
+
+.task-box .settings {
+    position: relative;
+    border-radius: 999px;
+}
+
+.settings :where(i, li) {
+    cursor: pointer;
+}
+
+.settings .task-menu {
+    z-index: 10;
+    right: -5px;
+    bottom: -65px;
+    padding: 5% 10%;
+    color: black;
+    position: absolute;
+    border-radius: 12px;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: all 0.3s cubic-bezier(0.9, 0.2, 0.9, 1.5);
+}
+
+.task-box .task:last-child .task-menu {
+    bottom: 0;
+    transform-origin: bottom right;
+}
+
+.task-box .task:first-child .task-menu {
+    bottom: -65px;
+    transform-origin: top right;
+}
+
+.task-menu.show {
+    transform: scale(1);
+}
+
+.task-menu li {
+    height: 25px;
+    margin-bottom: 3%;
+    background: lime;
+    color: black;
+    padding: 17px 15px;
+    border: 2px solid gold;
+    cursor: pointer;
+    justify-content: flex-start;
+    border: 2px solid limegreen;
+    box-shadow: 0 0 1rem lime;
+    border-radius: 999px;
+}
+
+.task-menu li:last-child {
+    margin-bottom: 0;
+}
+
+.settings li i {
+    padding-right: 8px;
+    color: black;
+}
+
+.settings li:hover {
+    background-color: limegreen;
+}
+
+@media (max-width: 400px) {
+    body {
+        padding: 0 10px;
+    }
+    .wrapper {
+        padding: 20px 0;
+    }
+    .filters span{
+        margin: 0 5px;
+    }
+    .task-input{
+        padding: 0 20px;
+    }
+    .controls{
+        padding: 18px 20px;
+    }
+    .task-box{
+        margin-top: 20px;
+        margin-right: 5px;
+        padding: 0 15px 10px 20px;
+    }
+    .task label input{
+        margin-top: 4px;
+    }
+}

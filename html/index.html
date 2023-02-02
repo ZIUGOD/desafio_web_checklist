@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"></html>
+<head>
+    <meta charset="utf-8">
+    <title>Checklist</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="task-input">
+            <input type="text" placeholder="Adicionar tarefa...">
+            <a href="https://github.com/ZIUGOD/ckecklist" target="_blank"><img id="github-image-link" src="../images/github_logo.png" alt="GitHub repositore"></a>
+        </div>
+        <div class="agora">
+            <p id="data-atual">a</p>
+            <p id="dia-semana">b</p>
+            <p id="hora-atual">c</p>
+        </div>
+        <div class="controls">
+            <div class="filters">
+                <span class="active" id="all">Todas</span>
+                <span id="pending">Pendentes</span>
+                <span id="completed">Completas</span>
+            </div>
+            <button class="clear-btn">Limpar</button>
+        </div>
+
+        <ul class="task-box"></ul>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script src="../js/current_time.js"></script>
+</body>
